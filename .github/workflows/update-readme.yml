@@ -1,0 +1,48 @@
+name: Update README – latest projects
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # every day 04:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get 4 most‑recent non‑fork repos
+        env:
+          USER: ${{ github.repository_owner }}
+        run: |
+          curl -s "https://api.github.com/users/$USER/repos?sort=updated&per_page=10" \
+          | jq -r 'map(select(.fork==false))[0:4] | .[].name' > repos.txt
+
+      - name: Build project cards
+        env:
+          USER: ${{ github.repository_owner }}
+        run: |
+          {
+            echo '<p align="center">'
+            while read -r repo; do
+              echo "  <img src=\"https://github-readme-stats.vercel.app/api/pin/?username=$USER&repo=$repo&theme=react\" />"
+            done < repos.txt
+            echo '</p>'
+          } > latest_projects.html
+
+      - name: Inject into README
+        run: |
+          START="<!-- latest_projects starts -->"
+          END="<!-- latest_projects ends -->"
+          CONTENT=$(cat latest_projects.html | sed 's/[\/&]/\\&/g')
+          perl -0777 -i -pe "s/${START}[\\s\\S]*?${END}/${START}\n${CONTENT}\n${END}/" README.md
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "readme‑bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "chore: update latest project cards"
+      - uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
