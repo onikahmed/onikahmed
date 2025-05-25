@@ -1,6 +1,6 @@
 <h1 align="center">Hi there 👋 I’m Onik Ahmed</h1>
 <p align="center">
-  🚀 iOS Developer • 🧠 ML Enthusiast • 🔍 Detective by Day • 📍 Los Angeles, California
+  🚀 iOS Developer • 🧠 ML & AI Enthusiast • 📍 Los Angeles, California
 </p>
 
 <p align="center">
