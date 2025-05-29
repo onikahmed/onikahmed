@@ -11,20 +11,6 @@
 
 ---
 
-## 🚀 Latest Projects (need fixing)
-
-<!-- latest_projects starts -->
-<!-- latest_projects ends -->
-
----
-
-## 🏆 Trophies
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=onikahmed&theme=flat&title=Repositories,Stars,Commits,PullRequest,Issues" />
-</p>
-
----
-
 ## 📈 Stats
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=onikahmed&show_icons=true&theme=react" />
