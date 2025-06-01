@@ -1,11 +1,14 @@
 name: Update README
+
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight
+  workflow_dispatch:       # Allows manual runs
 
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,7 +22,7 @@ jobs:
 
       - name: Push changes
         env:
-          TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}  # Uses your personal access token
         run: |
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/onikahmed/onikahmed.git
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/onikahmed/onikahmed.git
           git push origin main
