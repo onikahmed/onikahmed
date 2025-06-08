@@ -1,6 +1,6 @@
 <h1 align="center">Hi there 👋 I’m Onik</h1>
 <p align="center">
-  🚀 iOS Developer • 🧠 Researcher • 📍 Los Angeles, California
+  🧠 Researcher • 📍 Los Angeles, California
 </p>
 
 <p align="center">
