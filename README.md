@@ -1,6 +1,6 @@
 <!-- HEADER BANNER -->
 <p align="center">
-  <img src="banner.svg" alt="Onik Ahmed banner" width="100%" />
+  <img src="banner3.svg" alt="Onik Ahmed banner" width="100%" />
 </p>
 
 <!-- TYPING ANIMATION -->
