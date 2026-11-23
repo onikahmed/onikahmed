@@ -55,4 +55,3 @@ languages: [ Python, Swift, Java ]
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&duration=4000&pause=2000&color=8B949E&center=true&vCenter=true&width=520&lines=%22Build+what+you+want+to+use.+Share+what+you+love.%22" alt="Motto" />
 </p>
 
-<img src="footer-2.svg" width="100%" alt="footer" />
